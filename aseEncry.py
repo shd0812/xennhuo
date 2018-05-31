@@ -13,7 +13,7 @@ class prpcrypt():
 
 	def encrypt(self,text):
 		#print(text)
-		cryptor = AES.new(self.key, self.mode, b'sxsadjgdAkg_llhs')
+		cryptor = AES.new(self.key, self.mode, self.key)
 		# 这里密钥key 长度必须为16（AES-128）、24（AES-192）、或32（AES-256）Bytes 长度.目前AES-128足够用
 		length = 16
 		count = len(text)
@@ -32,7 +32,7 @@ class prpcrypt():
 	# 解密后，去掉补足的空格用strip() 去掉
 	def decrypt(self, text):
 		print(type(self.key))
-		cryptor = AES.new(self.key, self.mode, b'sxs_djgdAkg_llhs')
+		cryptor = AES.new(self.key, self.mode, b'sxsadjgdAkg_llhs')
 		plain_text = cryptor.decrypt(a2b_hex(text))
 		print(plain_text.decode())
 		return plain_text.decode()

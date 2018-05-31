@@ -7,7 +7,7 @@ def open_Yaml(path):
         data=load(pf)
         return data['testcase']
 
-#加密参数
+# 读取yaml来获取加密参数
 def get_Param(path):
     pc = prpcrypt()
     ss=Sign()
@@ -41,7 +41,7 @@ def get_Param(path):
     d['sign']=sign
 
     return d
-
+# 通过网页输入来获取
 def input_parm(parm_str):
     ss = Sign()
     if '&' in parm_str and '=' in parm_str:

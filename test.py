@@ -16,14 +16,12 @@ def register_query(url,path):
     result=xx_post(url,data=dic)
     return result
 
-def send_post(type,str):
+def send_post(parm_url,str):
     dic = input_parm(str)
     if dic =='输入参数不合法':
         return dic
     else:
-
-
-        result=xx_post(type,data=dic)
+        result=xx_post(parm_url,data=dic)
         return result
 
 if __name__=='__main__':
