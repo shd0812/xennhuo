@@ -71,10 +71,11 @@ class Sign():
 if __name__ == '__main__':
 	#key = b'sxs_djgdAkg_llhs'
 	pc = prpcrypt()  # 初始化密钥
-	#e = pc.encrypt("shaxiaoseng_xhzt")
-	e='a55316035616f13417dd6d63e7f32493'
-	d = pc.decrypt(e)
-	print(d)
+	e = pc.encrypt("19919920005")
+
+	#s='e3b192295f414c947b2ad3b990b2a6e0'
+	#d = pc.decrypt(s)
+	print(e)
 
 	# bb=Sign()
 	# ss=bb.get_sign()

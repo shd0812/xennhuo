@@ -11,26 +11,23 @@ div{
 	text-align: center;
 }
 	</style>
-	<script src="../static/jquery.min.js"></script>
-	<script>
-$(document).ready(function() {
-$(".btn10").click(function(){
-    alert('222')
-    var data = $("#addForm").serialize();
-    alert(data)
-    var url = $("#addForm").attr("action");
-//    <!--$.ajax({-->
-//        <!--type: 'POST',-->
-//        <!--url: url,-->
-//        <!--dataType: 'json',-->
-//        <!--data: data,-->
-//        <!--success: function (data) {-->
-//            <!--$('#json').html(data.result);-->
-//        <!--}-->
-//     <!--});-->
-});
-});
-</script>
+	<!--<script src="../static/jquery.min.js"></script>-->
+	<!--<script>-->
+<!--$(".btn10").click(function(){-->
+    <!--alert('222')-->
+    <!--var data = $("#addForm").serialize();-->
+    <!--var url = $("#addForm").attr("action");-->
+    <!--$.ajax({-->
+        <!--type: 'POST',-->
+        <!--url: url,-->
+        <!--dataType: 'json',-->
+        <!--data: data,-->
+        <!--success: function (data) {-->
+            <!--$('#json').html(data.result);-->
+        <!--}-->
+     <!--});-->
+<!--})-->
+<!--</script>-->
 
 </head>
 
@@ -51,13 +48,12 @@ $(".btn10").click(function(){
               <p style="color:red">* 如需加密则在参数值后加 "_m"</p>
               <span style="color:red">例:新用户注册:   mobile=18513070001_m&user_id=xeenhuo003_m&user_name=wanghou_m&user_identity=152701198001010039_m
                   <br>用户投资记录查询:  platform_uid=293_m&start_time=2018-05-12 12:34:34&end_time=2018-05-12 12:34:34</span>
-
+              <p><button class="btn10" type="submit">来呀，快活呀</button></p>
 			  </form>
-	<p><button class="btn10" type="submit">来呀，快活呀</button></p>
 
 
 </div>
 <hr>
-<pre id="json">此处展示返回来的结果</pre>
+<pre id="json">星火此处展示返回来的结果</pre>
 </body>
 </html>

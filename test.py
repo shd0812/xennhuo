@@ -4,7 +4,7 @@ from utils import open_Yaml
 
 def xx_post(url,**kwargs):
     method = 'POST'
-    host = 'https://mm.shaxiaoseng.com/Xeenho/'
+    host = 'https://mi.shaxiaoseng.com:4433/Xeenho/'
     client = Base_Requests(method, host, url)
 
     result=client.sxs_Api(data=kwargs)

@@ -44,16 +44,16 @@ def get_Param(path):
 # 通过网页输入来获取
 def input_parm(parm_str):
     ss = Sign()
-    if '&' in parm_str and '=' in parm_str:
+    if '&' in parm_str or '=' in parm_str:
     #parm_str='platform_uid=293_m&start_time=2018-05-12 12:34:34&end_time=2018-05-12 12:34:34'
         m_code='shaxiaoseng_xhzt'
         c_code='c_code='+m_code+'_m&'
         m_t_code=str(ss.getTimestamp())+'000'
         t_code='t_code='+m_t_code+'_m&'
-        m_serial_num='ddddddd'
+        m_serial_num='dddddddfff'
         serial_num='serial_num='+m_serial_num+'&'
         parm_str = c_code+t_code+serial_num+parm_str
-        print(parm_str)
+        print('输入参数为:%s' % parm_str)
         list = parm_str.split('&')
     #print(list)
         pc = prpcrypt()
@@ -69,7 +69,7 @@ def input_parm(parm_str):
                 parm_dic[child_list[0]] = child_list[1]
         sign = ss.get_sign(m_serial_num,m_t_code,m_code)
         parm_dic['sign'] = sign
-        print(parm_dic)
+        print('加密后的参数:%s' % parm_dic)
         return parm_dic
     else:
         return '输入参数不合法'
