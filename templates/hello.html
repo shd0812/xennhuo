@@ -15,19 +15,21 @@ div{
 	<script>
 $(document).ready(function() {
 $(".btn10").click(function(){
-    alert('222')
+    //alert('222')
     var data = $("#addForm").serialize();
-    alert(data)
+    //alert(data)
     var url = $("#addForm").attr("action");
-//    <!--$.ajax({-->
-//        <!--type: 'POST',-->
-//        <!--url: url,-->
-//        <!--dataType: 'json',-->
-//        <!--data: data,-->
-//        <!--success: function (data) {-->
-//            <!--$('#json').html(data.result);-->
-//        <!--}-->
-//     <!--});-->
+    //alert(url)
+   $.ajax({
+        type: 'POST',
+        url: url,
+       dataType: 'json',
+        data: data,
+        success: function (data) {
+           // alert(data)
+            $('#json').html(data.result);
+        }
+     });
 });
 });
 </script>
@@ -58,6 +60,7 @@ $(".btn10").click(function(){
 
 </div>
 <hr>
-<pre id="json">此处展示返回来的结果</pre>
+<div id="json" style="margin:auto auto;width:1000px;word-wrap:break-word; word-break:break-all;">
+</div>
 </body>
 </html>
