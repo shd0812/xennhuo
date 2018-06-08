@@ -13,6 +13,33 @@ div{
 	</style>
 	<script src="../static/jquery.min.js"></script>
 	<script>
+		function formatJson(msg) {
+        var rep = "~";
+        var jsonStr = JSON.stringify(msg, null, rep)
+        var str = "";
+        for (var i = 0; i < jsonStr.length; i++) {
+            var text2 = jsonStr.charAt(i)
+            if (i > 1) {
+                var text = jsonStr.charAt(i - 1)
+                if (rep != text && rep == text2) {
+                    str += "<br/>"
+                }
+            }
+            str += text2;
+        }
+        jsonStr = "";
+        for (var i = 0; i < str.length; i++) {
+            var text = str.charAt(i);
+            if (rep == text)
+                jsonStr += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            else {
+                jsonStr += text;
+            }
+            if (i == str.length - 2)
+                jsonStr += "<br/>"
+        }
+        return jsonStr;
+    }
 $(document).ready(function() {
 $(".btn10").click(function(){
     //alert('222')
@@ -27,7 +54,7 @@ $(".btn10").click(function(){
         data: data,
         success: function (data) {
            // alert(data)
-            $('#json').html(data.result);
+            $('#json').html(formatJson(data));
         }
      });
 });
@@ -60,7 +87,7 @@ $(".btn10").click(function(){
 
 </div>
 <hr>
-<div id="json" style="margin:auto auto;width:1000px;word-wrap:break-word; word-break:break-all;">
+<div id="json" style="text-align:left">
 </div>
 </body>
 </html>

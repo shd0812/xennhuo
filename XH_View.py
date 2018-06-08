@@ -18,7 +18,7 @@ def next():
     parm_str=request.form['parm_str']
     parm_url = request.form['parm_url']
     data = send_post(parm_url, parm_str)
-    list_dic={}
-    list_dic['result']=str(data)
-    print('返回结果:%s' % list_dic)
-    return jsonify(list_dic)
+    # list_dic={}
+    # list_dic['result']=str(data)
+    # print('返回结果:%s' % list_dic)
+    return jsonify(data)
