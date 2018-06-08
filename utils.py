@@ -44,7 +44,7 @@ def get_Param(path):
 # 通过网页输入来获取
 def input_parm(parm_str):
     ss = Sign()
-    if '&' in parm_str or '=' in parm_str:
+    if '&' in parm_str or '=' in parm_str or parm_str=='_m':
     #parm_str='platform_uid=293_m&start_time=2018-05-12 12:34:34&end_time=2018-05-12 12:34:34'
         m_code='shaxiaoseng_xhzt'
         c_code='c_code='+m_code+'_m&'
@@ -60,7 +60,7 @@ def input_parm(parm_str):
         parm_dic = {}
         for child in list:
             child_list=child.split('=')
-        #print(child_list)
+            #print(child_list)
             if '_m' in child_list[1]:
                 child_list[1] = child_list[1][0:len(child_list[1])-2]
                 child_list[1]=pc.encrypt(child_list[1])
@@ -71,6 +71,7 @@ def input_parm(parm_str):
         parm_dic['sign'] = sign
         print('加密后的参数:%s' % parm_dic)
         return parm_dic
+
     else:
         return '输入参数不合法'
 
